@@ -1,4 +1,8 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { marketDataService } from '../../services/api';
 import mockMarketData from '../../mock/marketData.json';
+import mockMarketData from '../../mock/marketData.json';
+import mockSymbolDetail from '../../mock/symbolDetail.json';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { marketDataService } from '../../services/api';
 
@@ -21,7 +25,8 @@ export const fetchSymbolDetail = createAsyncThunk(
       const res = await marketDataService.getBySymbol(symbol);
       return res.data;
     } catch (err) {
-      return rejectWithValue(err.message);
+      console.warn(`Symbol API unavailable for ${symbol}, using mock data`);
+      return mockSymbolDetail;
     }
   }
 );
