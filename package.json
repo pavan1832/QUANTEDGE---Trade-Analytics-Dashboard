@@ -11,10 +11,13 @@
     "react-scripts": "5.0.1",
     "recharts": "^2.12.3"
   },
+  {
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build"
-  },
+    "build": "CI=false react-scripts build",
+    "postinstall": "chmod +x node_modules/.bin/react-scripts"
+  }
+}
   "proxy": "http://localhost:5000",
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
