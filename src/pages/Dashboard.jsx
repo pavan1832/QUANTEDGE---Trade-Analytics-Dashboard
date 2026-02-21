@@ -1,3 +1,4 @@
+const IS_PROD = process.env.NODE_ENV === "production";
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -127,11 +128,23 @@ const Dashboard = () => {
   const portfolioLoading = portStatus === 'idle' || portStatus === 'loading';
   const marketLoading = mktStatus === 'idle' || mktStatus === 'loading';
 
-  useEffect(() => {
+useEffect(() => {
+  // Initial fetch
+  dispatch(fetchMarketData());
+  dispatch(fetchPortfolio());
+  dispatch(fetchTrades({ limit: 20 }));
+
+  // ❗ Only auto-refresh in development (local)
+  if (IS_PROD) return;
+
+  const interval = setInterval(() => {
     dispatch(fetchMarketData());
     dispatch(fetchPortfolio());
     dispatch(fetchTrades({ limit: 20 }));
-  }, [dispatch]);
+  }, 10000);
+
+  return () => clearInterval(interval);
+}, [dispatch]);
 
   // Auto-load symbol detail when selectedSymbol changes
   useEffect(() => {
