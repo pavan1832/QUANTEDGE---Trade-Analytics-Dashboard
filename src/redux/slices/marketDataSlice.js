@@ -1,3 +1,4 @@
+import mockMarketData from '../../mock/marketData.json';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { marketDataService } from '../../services/api';
 
@@ -8,11 +9,11 @@ export const fetchMarketData = createAsyncThunk(
       const res = await marketDataService.getAll();
       return res.data;
     } catch (err) {
-      return rejectWithValue(err.message);
+      console.warn('Market API unavailable, using mock data');
+      return mockMarketData; // 👈 fallback instead of reject
     }
   }
 );
-
 export const fetchSymbolDetail = createAsyncThunk(
   'marketData/fetchSymbol',
   async (symbol, { rejectWithValue }) => {
