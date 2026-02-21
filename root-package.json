@@ -1,0 +1,13 @@
+{
+  "name": "trading-dashboard",
+  "version": "1.0.0",
+  "description": "QuantEdge — Full-Stack Trading Analytics Dashboard",
+  "scripts": {
+    "install:all": "npm install && cd server && npm install",
+    "start:server": "cd server && npm start",
+    "start:client": "npm start",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "start": "node server/index.js"
+  },
+  "private": true
+}

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors */
+  --bg: #090c10;
+  --surface-0: #0d1117;
+  --surface-1: #111820;
+  --surface-2: #161e2a;
+  --surface-hover: rgba(255, 255, 255, 0.03);
+
+  --border: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-active: rgba(255, 255, 255, 0.15);
+
+  --text-primary: #f0f4f8;
+  --text-secondary: #c9d6e3;
+  --text-muted: #7a8fa6;
+  --text-dim: #4a5f75;
+
+  --accent: #00d4aa;
+  --accent-dim: rgba(0, 212, 170, 0.15);
+  --accent-gradient: linear-gradient(90deg, #00d4aa, #0099ff);
+
+  --green: #34d399;
+  --red: #f87171;
+  --teal: #22d3ee;
+  --amber: #fbbf24;
+
+  --skeleton-bg: rgba(255, 255, 255, 0.05);
+
+  /* Typography */
+  --font-sans: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: var(--font-sans);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-active);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-dim);
+  color: var(--text-primary);
+}
