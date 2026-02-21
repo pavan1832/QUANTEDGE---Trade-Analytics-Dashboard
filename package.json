@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build",
+    "build": "CI=false npx react-scripts build"
     "postinstall": "chmod +x node_modules/.bin/react-scripts"
   },
   "proxy": "http://localhost:5000",
