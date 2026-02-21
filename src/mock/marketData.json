@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "price": 194.99,
+    "change": 5.49,
+    "changePct": 2.9,
+    "volume": 56057971
+  },
+  {
+    "symbol": "MSFT",
+    "name": "Microsoft Corp.",
+    "price": 425.11,
+    "change": 9.91,
+    "changePct": 2.39,
+    "volume": 19246990
+  },
+  {
+    "symbol": "GOOGL",
+    "name": "Alphabet Inc.",
+    "price": 181.39,
+    "change": 5.59,
+    "changePct": 3.18,
+    "volume": 29895989
+  }
+]
